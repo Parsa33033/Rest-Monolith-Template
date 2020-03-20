@@ -1,0 +1,23 @@
+version: "3.6"
+services:
+  db:
+    image: "mysql:5"
+    container_name: "mysql"
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: "db"
+      MYSQL_ROOT_PASSWORD: "changeit"
+    volumes:
+      - type: volume
+        source: mysql-db
+        target: /var/lib/mysql/
+  redis:
+    image: "redis:5"
+    container_name: redis
+    ports:
+      - 6379:6379
+    command: redis-server --requirepass changeit
+      
+volumes:
+  mysql-db:
