@@ -1,12 +1,25 @@
 logging:
   file: app.log
-server:  port: 8080
-
-spring:  application:    name: monolith
-  datasource:    url: jdbc:mysql://localhost:3306/db
+server:
+  port: 8080
+  ssl:    enabled: true
+    key-store: classpath:ssl.p12
+    key-store-password: changeit
+    key-alias: ssl
+    key-password: changeit
+spring:
+  application:
+    name: monolith
+  datasource:
+    url: jdbc:mysql://mysqldb:3306/db
     username: root
     password: changeit
-  jpa:    hibernate:      ddl-auto: update
+  jpa:
+    hibernate:
+      ddl-auto: update
+  redis:    host: redis
+    password: changeit
+    port: 6379
 jwt:
   key-store: classpath:jwt.p12
   key-store-password: changeit

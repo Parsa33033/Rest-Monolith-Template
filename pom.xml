@@ -13,7 +13,7 @@
 	<artifactId>SpringBootMonolithRest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SpringBootMonolithRest</name>
-	<description>m2</description>
+	<description>rest monolith template</description>
 
 	<properties>
 		<java.version>1.8</java.version>
